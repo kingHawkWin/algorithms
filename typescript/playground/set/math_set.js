@@ -12,15 +12,18 @@ class MathSet {
     }
     // ∪
     union(set1, set2) {
-        return;
+        return new Set([...set1, ...set2]);
     }
     // ∩
     intersection(set1, set2) {
-        return;
+        return new Set([...set1].filter(v => set2.has(v)));
+    }
+    // -
+    diff(set1, set2) {
+        return new Set([...set1].filter(v => !set2.has(v)));
     }
     // ⊆
     isSubset(set1, set2) {
-        return;
     }
     // ⊂
     isProperSubset(set1, set2) {
